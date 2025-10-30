@@ -18,6 +18,22 @@ This exercise consists of two parts. Please read the following files for detaile
 1. [Part1.md](Part1.md)
 2. [Part2.md](Part2.md)
 
+## Part 2 Tester
+
+We’ve provided a tester for **Part 2** of the exercise.  
+
+### Usage Instructions
+1. Make sure that `chess_sim.py` and `chess_sim.sh` are located **one level above** the `tester` folder in the directory hierarchy.  
+2. Navigate to the `tester` folder:  
+   ```bash
+   cd tester
+   ./tester.sh
+   ```
+3. If you encounter a permission issue, make the script executable:
+   ```bash
+    chmod +x tester.sh
+   ```
+
 Make sure to follow the instructions carefully and submit all required files as specified. If you have any questions, feel free to reach out for assistance.
 
 Good luck!
