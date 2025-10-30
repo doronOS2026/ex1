@@ -95,7 +95,7 @@ If you want 10 bonus points, implement all chess moves correcly and not only pro
 Examples 1:
 
 ```bash
-(base) itay@itayPC:~/Documents/Repos/Operation-Systems-Solutions/Operation-System-Solutions/Exercise1$ ./chess_sim.sh splited_pgn/capmemel24_1.pgn
+doronkonkol@MacBookPro ex1 % ./chess_sim.sh splited_pgn/capmemel24_1.pgn
 Metadata from PGN file:
 [Event "57th Capablanca Mem"]
 [Site "Havana CUB"]
@@ -111,150 +111,124 @@ Metadata from PGN file:
 
 Move 0/114
   a b c d e f g h
-8 r  n  b  q  k  b  n  r  8
-7 p  p  p  p  p  p  p  p  7
-6 .  .  .  .  .  .  .  .  6
-5 .  .  .  .  .  .  .  .  5
-4 .  .  .  .  .  .  .  .  4
-3 .  .  .  .  .  .  .  .  3
-2 P  P  P  P  P  P  P  P  2
-1 R  N  B  Q  K  B  N  R  1
+8 r n b q k b n r 8
+7 p p p p p p p p 7
+6 . . . . . . . . 6
+5 . . . . . . . . 5
+4 . . . . . . . . 4
+3 . . . . . . . . 3
+2 P P P P P P P P 2
+1 R N B Q K B N R 1
   a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: d
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+d
 Move 1/114
   a b c d e f g h
-8 r  n  b  q  k  b  n  r  8
-7 p  p  p  p  p  p  p  p  7
-6 .  .  .  .  .  .  .  .  6
-5 .  .  .  .  .  .  .  .  5
-4 .  .  .  .  P  .  .  .  4
-3 .  .  .  .  .  .  .  .  3
-2 P  P  P  P  .  P  P  P  2
-1 R  N  B  Q  K  B  N  R  1
+8 r n b q k b n r 8
+7 p p p p p p p p 7
+6 . . . . . . . . 6
+5 . . . . . . . . 5
+4 . . . . P . . . 4
+3 . . . . . . . . 3
+2 P P P P . P P P 2
+1 R N B Q K B N R 1
   a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: d
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+d
 Move 2/114
   a b c d e f g h
-8 r  n  b  q  k  b  n  r  8
-7 p  p  p  p  .  p  p  p  7
-6 .  .  .  .  .  .  .  .  6
-5 .  .  .  .  p  .  .  .  5
-4 .  .  .  .  P  .  .  .  4
-3 .  .  .  .  .  .  .  .  3
-2 P  P  P  P  .  P  P  P  2
-1 R  N  B  Q  K  B  N  R  1
+8 r n b q k b n r 8
+7 p p p p . p p p 7
+6 . . . . . . . . 6
+5 . . . . p . . . 5
+4 . . . . P . . . 4
+3 . . . . . . . . 3
+2 P P P P . P P P 2
+1 R N B Q K B N R 1
   a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: d
-Move 3/114
-  a b c d e f g h
-8 r  n  b  q  k  b  n  r  8
-7 p  p  p  p  .  p  p  p  7
-6 .  .  .  .  .  .  .  .  6
-5 .  .  .  .  p  .  .  .  5
-4 .  .  .  .  P  .  .  .  4
-3 .  .  .  .  .  N  .  .  3
-2 P  P  P  P  .  P  P  P  2
-1 R  N  B  Q  K  B  .  R  1
-  a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: a
-Move 2/114
-  a b c d e f g h
-8 r  n  b  q  k  b  n  r  8
-7 p  p  p  p  .  p  p  p  7
-6 .  .  .  .  .  .  .  .  6
-5 .  .  .  .  p  .  .  .  5
-4 .  .  .  .  P  .  .  .  4
-3 .  .  .  .  .  .  .  .  3
-2 P  P  P  P  .  P  P  P  2
-1 R  N  B  Q  K  B  N  R  1
-  a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: a
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+a
 Move 1/114
   a b c d e f g h
-8 r  n  b  q  k  b  n  r  8
-7 p  p  p  p  p  p  p  p  7
-6 .  .  .  .  .  .  .  .  6
-5 .  .  .  .  .  .  .  .  5
-4 .  .  .  .  P  .  .  .  4
-3 .  .  .  .  .  .  .  .  3
-2 P  P  P  P  .  P  P  P  2
-1 R  N  B  Q  K  B  N  R  1
+8 r n b q k b n r 8
+7 p p p p p p p p 7
+6 . . . . . . . . 6
+5 . . . . . . . . 5
+4 . . . . P . . . 4
+3 . . . . . . . . 3
+2 P P P P . P P P 2
+1 R N B Q K B N R 1
   a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: d
-Move 2/114
-  a b c d e f g h
-8 r  n  b  q  k  b  n  r  8
-7 p  p  p  p  .  p  p  p  7
-6 .  .  .  .  .  .  .  .  6
-5 .  .  .  .  p  .  .  .  5
-4 .  .  .  .  P  .  .  .  4
-3 .  .  .  .  .  .  .  .  3
-2 P  P  P  P  .  P  P  P  2
-1 R  N  B  Q  K  B  N  R  1
-  a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: d
-Move 3/114
-  a b c d e f g h
-8 r  n  b  q  k  b  n  r  8
-7 p  p  p  p  .  p  p  p  7
-6 .  .  .  .  .  .  .  .  6
-5 .  .  .  .  p  .  .  .  5
-4 .  .  .  .  P  .  .  .  4
-3 .  .  .  .  .  N  .  .  3
-2 P  P  P  P  .  P  P  P  2
-1 R  N  B  Q  K  B  .  R  1
-  a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: d
-Move 4/114
-  a b c d e f g h
-8 r  .  b  q  k  b  n  r  8
-7 p  p  p  p  .  p  p  p  7
-6 .  .  n  .  .  .  .  .  6
-5 .  .  .  .  p  .  .  .  5
-4 .  .  .  .  P  .  .  .  4
-3 .  .  .  .  .  N  .  .  3
-2 P  P  P  P  .  P  P  P  2
-1 R  N  B  Q  K  B  .  R  1
-  a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: d
-Move 5/114
-  a b c d e f g h
-8 r  .  b  q  k  b  n  r  8
-7 p  p  p  p  .  p  p  p  7
-6 .  .  n  .  .  .  .  .  6
-5 .  B  .  .  p  .  .  .  5
-4 .  .  .  .  P  .  .  .  4
-3 .  .  .  .  .  N  .  .  3
-2 P  P  P  P  .  P  P  P  2
-1 R  N  B  Q  K  .  .  R  1
-  a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: s
-Move 114/114
-  a b c d e f g h
-8 .  .  .  .  .  .  .  r  8
-7 .  .  .  .  .  .  R  .  7
-6 .  .  p  .  .  .  .  .  6
-5 p  .  .  .  .  .  p  p  5
-4 r  .  .  .  .  .  .  k  4
-3 .  .  P  .  .  .  .  P  3
-2 .  .  .  .  .  .  .  .  2
-1 .  .  .  .  .  .  K  R  1
-  a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: w
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+a
 Move 0/114
   a b c d e f g h
-8 r  n  b  q  k  b  n  r  8
-7 p  p  p  p  p  p  p  p  7
-6 .  .  .  .  .  .  .  .  6
-5 .  .  .  .  .  .  .  .  5
-4 .  .  .  .  .  .  .  .  4
-3 .  .  .  .  .  .  .  .  3
-2 P  P  P  P  P  P  P  P  2
-1 R  N  B  Q  K  B  N  R  1
+8 r n b q k b n r 8
+7 p p p p p p p p 7
+6 . . . . . . . . 6
+5 . . . . . . . . 5
+4 . . . . . . . . 4
+3 . . . . . . . . 3
+2 P P P P P P P P 2
+1 R N B Q K B N R 1
   a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: q
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+s
+Move 114/114
+  a b c d e f g h
+8 . . . . . . . . 8
+7 . . . . . . R . 7
+6 . . p . . . . . 6
+5 p . . . . . p p 5
+4 r . . . . . . k 4
+3 . . P . . . . P 3
+2 . . . . . . . . 2
+1 . . . . . . K . 1
+  a b c d e f g h
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+a
+Move 113/114
+  a b c d e f g h
+8 . . . . . . . . 8
+7 . . . . . . R . 7
+6 . . p . . . p . 6
+5 p . . . . . . p 5
+4 r . . . . . . k 4
+3 . . P . . . . P 3
+2 . . . . . . . . 2
+1 . . . . . . K . 1
+  a b c d e f g h
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+a
+Move 112/114
+  a b c d e f g h
+8 . . . . . . . . 8
+7 R . . . . . . . 7
+6 . . p . . . p . 6
+5 p . . . . . . p 5
+4 r . . . . . . k 4
+3 . . P . . . . P 3
+2 . . . . . . . . 2
+1 . . . . . . K . 1
+  a b c d e f g h
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+w
+Move 0/114
+  a b c d e f g h
+8 r n b q k b n r 8
+7 p p p p p p p p 7
+6 . . . . . . . . 6
+5 . . . . . . . . 5
+4 . . . . . . . . 4
+3 . . . . . . . . 3
+2 P P P P P P P P 2
+1 R N B Q K B N R 1
+  a b c d e f g h
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+q
 Exiting.
 End of game.
+
 ```
 
 
