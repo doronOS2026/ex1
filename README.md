@@ -1,7 +1,7 @@
 # Exercise 1: Operating Systems
 
 ## Due Date
-The due date for this exercise is **11.11.2025, 23:59**.
+The due date for this exercise is **18.11.2025, 23:59**.
 
 ## The TA overseeing the assignment – Doron Konkol
 Please feel free to reach out with any clarifications or questions through the forum.
