@@ -240,7 +240,7 @@ File does not exist: splited_pgn/capmemel24_1.pg
 
 Example 3:
 ```bash
-(base) itay@itayPC:~/Documents/Repos/Operation-Systems-Solutions/Operation-System-Solutions/Exercise1$ ./chess_sim.sh splited_pgn/capmemel24_1.pgn
+doronkonkol@MacBookPro ex1 % ./chess_sim.sh splited_pgn/capmemel24_1.pgn
 Metadata from PGN file:
 [Event "57th Capablanca Mem"]
 [Site "Havana CUB"]
@@ -256,69 +256,179 @@ Metadata from PGN file:
 
 Move 0/114
   a b c d e f g h
-8 r  n  b  q  k  b  n  r  8
-7 p  p  p  p  p  p  p  p  7
-6 .  .  .  .  .  .  .  .  6
-5 .  .  .  .  .  .  .  .  5
-4 .  .  .  .  .  .  .  .  4
-3 .  .  .  .  .  .  .  .  3
-2 P  P  P  P  P  P  P  P  2
-1 R  N  B  Q  K  B  N  R  1
+8 r n b q k b n r 8
+7 p p p p p p p p 7
+6 . . . . . . . . 6
+5 . . . . . . . . 5
+4 . . . . . . . . 4
+3 . . . . . . . . 3
+2 P P P P P P P P 2
+1 R N B Q K B N R 1
   a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: s
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+s
 Move 114/114
   a b c d e f g h
-8 .  .  .  .  .  .  .  r  8
-7 .  .  .  .  .  .  R  .  7
-6 .  .  p  .  .  .  .  .  6
-5 p  .  .  .  .  .  p  p  5
-4 r  .  .  .  .  .  .  k  4
-3 .  .  P  .  .  .  .  P  3
-2 .  .  .  .  .  .  .  .  2
-1 .  .  .  .  .  .  K  R  1
+8 . . . . . . . . 8
+7 . . . . . . R . 7
+6 . . p . . . . . 6
+5 p . . . . . p p 5
+4 r . . . . . . k 4
+3 . . P . . . . P 3
+2 . . . . . . . . 2
+1 . . . . . . K . 1
   a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: d
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+d
 No more moves available.
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
-```
-Example (pressing a at the beggining of the game):
-bash```
-(base) itay@itayPC:~/Documents/Repos/Operation-Systems-Solutions/Operation-System-Solutions/Exercise1$ ./chess_sim.sh splited_pgn/capmemel24_1.pgn 
-Metadata from PGN file:
-[Event "57th Capablanca Mem"]
-[Site "Havana CUB"]
-[Date "2024.05.03"]
-[Round "1"]
-[White "Andersen,Mad"]
-[Black "Quesada Perez,Luis Ernesto"]
-[Result "0-1"]
-[WhiteElo "2598"]
-[BlackElo "2567"]
-[EventDate "2024.05.03"]
-[ECO "C65"]
-
+d
+No more moves available.
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+a
+Move 113/114
+  a b c d e f g h
+8 . . . . . . . . 8
+7 . . . . . . R . 7
+6 . . p . . . p . 6
+5 p . . . . . . p 5
+4 r . . . . . . k 4
+3 . . P . . . . P 3
+2 . . . . . . . . 2
+1 . . . . . . K . 1
+  a b c d e f g h
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+a
+Move 112/114
+  a b c d e f g h
+8 . . . . . . . . 8
+7 R . . . . . . . 7
+6 . . p . . . p . 6
+5 p . . . . . . p 5
+4 r . . . . . . k 4
+3 . . P . . . . P 3
+2 . . . . . . . . 2
+1 . . . . . . K . 1
+  a b c d e f g h
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+w
 Move 0/114
   a b c d e f g h
-8 r  n  b  q  k  b  n  r  8
-7 p  p  p  p  p  p  p  p  7
-6 .  .  .  .  .  .  .  .  6
-5 .  .  .  .  .  .  .  .  5
-4 .  .  .  .  .  .  .  .  4
-3 .  .  .  .  .  .  .  .  3
-2 P  P  P  P  P  P  P  P  2
-1 R  N  B  Q  K  B  N  R  1
+8 r n b q k b n r 8
+7 p p p p p p p p 7
+6 . . . . . . . . 6
+5 . . . . . . . . 5
+4 . . . . . . . . 4
+3 . . . . . . . . 3
+2 P P P P P P P P 2
+1 R N B Q K B N R 1
   a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: a
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+w
 Move 0/114
   a b c d e f g h
-8 r  n  b  q  k  b  n  r  8
-7 p  p  p  p  p  p  p  p  7
-6 .  .  .  .  .  .  .  .  6
-5 .  .  .  .  .  .  .  .  5
-4 .  .  .  .  .  .  .  .  4
-3 .  .  .  .  .  .  .  .  3
-2 P  P  P  P  P  P  P  P  2
-1 R  N  B  Q  K  B  N  R  1
+8 r n b q k b n r 8
+7 p p p p p p p p 7
+6 . . . . . . . . 6
+5 . . . . . . . . 5
+4 . . . . . . . . 4
+3 . . . . . . . . 3
+2 P P P P P P P P 2
+1 R N B Q K B N R 1
   a b c d e f g h
-Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: 
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+d
+Move 1/114
+  a b c d e f g h
+8 r n b q k b n r 8
+7 p p p p p p p p 7
+6 . . . . . . . . 6
+5 . . . . . . . . 5
+4 . . . . P . . . 4
+3 . . . . . . . . 3
+2 P P P P . P P P 2
+1 R N B Q K B N R 1
+  a b c d e f g h
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+d
+Move 2/114
+  a b c d e f g h
+8 r n b q k b n r 8
+7 p p p p . p p p 7
+6 . . . . . . . . 6
+5 . . . . p . . . 5
+4 . . . . P . . . 4
+3 . . . . . . . . 3
+2 P P P P . P P P 2
+1 R N B Q K B N R 1
+  a b c d e f g h
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+d
+Move 3/114
+  a b c d e f g h
+8 r n b q k b n r 8
+7 p p p p . p p p 7
+6 . . . . . . . . 6
+5 . . . . p . . . 5
+4 . . . . P . . . 4
+3 . . . . . N . . 3
+2 P P P P . P P P 2
+1 R N B Q K B . R 1
+  a b c d e f g h
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+d
+Move 4/114
+  a b c d e f g h
+8 r . b q k b n r 8
+7 p p p p . p p p 7
+6 . . n . . . . . 6
+5 . . . . p . . . 5
+4 . . . . P . . . 4
+3 . . . . . N . . 3
+2 P P P P . P P P 2
+1 R N B Q K B . R 1
+  a b c d e f g h
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+a
+Move 3/114
+  a b c d e f g h
+8 r n b q k b n r 8
+7 p p p p . p p p 7
+6 . . . . . . . . 6
+5 . . . . p . . . 5
+4 . . . . P . . . 4
+3 . . . . . N . . 3
+2 P P P P . P P P 2
+1 R N B Q K B . R 1
+  a b c d e f g h
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+w
+Move 0/114
+  a b c d e f g h
+8 r n b q k b n r 8
+7 p p p p p p p p 7
+6 . . . . . . . . 6
+5 . . . . . . . . 5
+4 . . . . . . . . 4
+3 . . . . . . . . 3
+2 P P P P P P P P 2
+1 R N B Q K B N R 1
+  a b c d e f g h
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+s
+Move 114/114
+  a b c d e f g h
+8 . . . . . . . . 8
+7 . . . . . . R . 7
+6 . . p . . . . . 6
+5 p . . . . . p p 5
+4 r . . . . . . k 4
+3 . . P . . . . P 3
+2 . . . . . . . . 2
+1 . . . . . . K . 1
+  a b c d e f g h
+Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
+q
+Exiting.
+End of game.
 ```
