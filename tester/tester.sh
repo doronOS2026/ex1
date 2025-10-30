@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
@@ -14,11 +15,117 @@ if [[ ! -f "$CONFIG_FILE" ]]; then
     exit 1
 fi
 
+# ---------------- Functions ---------------- #
+
+check_missing_files() {
+    local OUTPUT_DIR=$1
+    local EXPECTED_OUTPUT_DIR=$2
+    MISSING_FILES=()
+    for EXPECTED_FILE in "$EXPECTED_OUTPUT_DIR"/*; do
+        FILE_NAME=$(basename "$EXPECTED_FILE")
+        if [[ ! -f "$OUTPUT_DIR/$FILE_NAME" ]]; then
+            MISSING_FILES+=("$FILE_NAME")
+        fi
+    done
+
+    if [[ ${#MISSING_FILES[@]} -ne 0 ]]; then
+        echo -e "${RED}Missing files: ${MISSING_FILES[*]}${NC}"
+    else
+        echo -e "${GREEN}All expected files are created.${NC}"
+    fi
+}
+
 preprocess_file() {
     local FILE=$1
     sed -e '/^[[:space:]]*$/d' -e ':a' -e 'N' -e '$!ba' -e 's/\n/\x0/' -e 's/[[:space:]]*$//' -e 's/\x0/\n/g' "$FILE" | sed -e '$a\'
 }
 
+compare_file_contents() {
+    local OUTPUT_DIR=$1
+    local EXPECTED_OUTPUT_DIR=$2
+    CONTENT_MISMATCH=0
+    for EXPECTED_FILE in "$EXPECTED_OUTPUT_DIR"/*; do
+        FILE_NAME=$(basename "$EXPECTED_FILE")
+        if [[ -f "$OUTPUT_DIR/$FILE_NAME" ]]; then
+            EXPECTED_CONTENT=$(preprocess_file "$EXPECTED_FILE")
+            OUTPUT_CONTENT=$(preprocess_file "$OUTPUT_DIR/$FILE_NAME")
+            DIFF=$(diff <(echo "$EXPECTED_CONTENT") <(echo "$OUTPUT_CONTENT"))
+            if [[ -n "$DIFF" ]]; then
+                CONTENT_MISMATCH=1
+                FAIL_DIR="fails/test_$(basename "$OUTPUT_DIR")"
+                mkdir -p "$FAIL_DIR"
+                echo "$DIFF" > "$FAIL_DIR/diff_$FILE_NAME.txt"
+            fi
+        fi
+    done
+
+    if [[ $CONTENT_MISMATCH -eq 0 ]]; then
+        echo -e "${GREEN}All file contents match the expected output.${NC}"
+    fi
+}
+
+# ---------------- Part 1 Tests ---------------- #
+run_part_1_tests() {
+    echo -e "${CYAN}========================================${NC}"
+    echo -e "${CYAN}          Beginning Tests for Part 1          ${NC}"
+    echo -e "${CYAN}========================================${NC}"
+
+    cd ..
+
+    if [[ -f "split_pgn.sh" ]]; then
+        SPLIT_SCRIPT="split_pgn.sh"
+    elif [[ -f "pgn_split.sh" ]]; then
+        SPLIT_SCRIPT="pgn_split.sh"
+    else
+        echo -e "${RED}No split script found (split_pgn.sh or pgn_split.sh)!${NC}"
+        return
+    fi
+
+    chmod +x "$SPLIT_SCRIPT"
+    cp "$SPLIT_SCRIPT" "$CURRENT_DIR"
+    cd "$CURRENT_DIR"
+
+    if [[ $SHELL == *"cbash"* ]]; then
+        sed -i 's|#!/bin/bash|#!/bin/cbash|' "$SPLIT_SCRIPT"
+    fi
+
+    for TEST in $PART_1_TESTS; do
+        INPUT=$(echo "$TEST" | jq -r '.input')
+        OUTPUT_DIR=$(echo "$TEST" | jq -r '.output_dir')
+        EXPECTED_OUTPUT_DIR=$(echo "$TEST" | jq -r '.expected_output_directory')
+
+        echo -e "${YELLOW}----------------------------------------${NC}"
+        echo -e "${YELLOW}Running test with input: ${BLUE}$INPUT${NC}"
+        echo -e "${YELLOW}Output directory: ${BLUE}$OUTPUT_DIR${NC}"
+        echo -e "${YELLOW}----------------------------------------${NC}"
+
+        mkdir -p "$OUTPUT_DIR"
+
+        echo -e "${BLUE}Running the split script...${NC}"
+        if ! ./"$SPLIT_SCRIPT" "$INPUT" "$OUTPUT_DIR" > /dev/null 2>&1; then
+            echo -e "${RED}Failed to run the split script${NC}"
+            continue
+        fi
+
+        echo -e "${BLUE}Checking for missing files...${NC}"
+        check_missing_files "$OUTPUT_DIR" "$EXPECTED_OUTPUT_DIR"
+
+        echo -e "${BLUE}Comparing file contents...${NC}"
+        compare_file_contents "$OUTPUT_DIR" "$EXPECTED_OUTPUT_DIR"
+
+        echo -e "${BLUE}Cleaning up...${NC}"
+        rm -r "$OUTPUT_DIR"
+
+        echo -e "${YELLOW}----------------------------------------${NC}"
+    done
+
+    rm -f "$SPLIT_SCRIPT"
+    echo -e "${CYAN}========================================${NC}"
+    echo -e "${CYAN}         Tests for Part 1 completed         ${NC}"
+    echo -e "${CYAN}========================================${NC}\n\n"
+}
+
+# ---------------- Part 2 Tests ---------------- #
 run_part_2_tests() {
     echo -e "${CYAN}========================================${NC}"
     echo -e "${CYAN}          Beginning Tests for Part 2          ${NC}"
@@ -43,7 +150,6 @@ run_part_2_tests() {
     chmod +x "$CHESS_SIM_SCRIPT"
     cp "$CHESS_SIM_SCRIPT" "$CURRENT_DIR"
     cp "$CHESS_SIM_PY" "$CURRENT_DIR"
-
     cd "$CURRENT_DIR"
 
     if [[ $SHELL == *"cbash"* ]]; then
@@ -51,7 +157,6 @@ run_part_2_tests() {
     fi
 
     TEST_NUM=0
-
     for TEST in $PART_2_TESTS; do
         ((TEST_NUM++))
         INPUT_PATH_PGN=$(echo "$TEST" | jq -r '.input_path_pgn')
@@ -65,7 +170,9 @@ run_part_2_tests() {
         TEMP_DIR=$(mktemp -d)
         MOVES_WITH_ENTER=$(echo "$MOVES" | sed 's/./&\n/g')
 
+        # Run chess_sim.sh
         echo -e "$MOVES_WITH_ENTER" | ./"$CHESS_SIM_SCRIPT" "$INPUT_PATH_PGN" > "$TEMP_DIR/student_output.txt" 2>&1
+        # Run chess_sim.py
         echo -e "$MOVES_WITH_ENTER" | python3 "$CHESS_SIM_PY" "$INPUT_PATH_PGN" > "$TEMP_DIR/expected_output.txt" 2>&1
 
         DIFF=$(diff -u "$TEMP_DIR/student_output.txt" "$TEMP_DIR/expected_output.txt")
@@ -93,6 +200,7 @@ run_part_2_tests() {
     echo -e "${CYAN}========================================${NC}\n\n"
 }
 
+# ---------------- Part 2 Special Tests ---------------- #
 run_part_2_special_tests() {
     echo -e "${CYAN}========================================${NC}"
     echo -e "${CYAN}      Beginning Tests for Part 2 Special     ${NC}"
@@ -117,7 +225,6 @@ run_part_2_special_tests() {
     chmod +x "$CHESS_SIM_SCRIPT"
     cp "$CHESS_SIM_SCRIPT" "$CURRENT_DIR"
     cp "$CHESS_SIM_PY" "$CURRENT_DIR"
-
     cd "$CURRENT_DIR"
 
     if [[ $SHELL == *"cbash"* ]]; then
@@ -140,7 +247,9 @@ run_part_2_special_tests() {
         TEMP_DIR=$(mktemp -d)
         MOVES_WITH_ENTER=$(echo "$MOVES" | sed 's/./&\n/g')
 
+        # Run chess_sim.sh
         echo -e "$MOVES_WITH_ENTER" | ./"$CHESS_SIM_SCRIPT" "$INPUT_PATH_PGN" > "$TEMP_DIR/student_output.txt" 2>&1
+        # Run chess_sim.py
         echo -e "$MOVES_WITH_ENTER" | python3 "$CHESS_SIM_PY" "$INPUT_PATH_PGN" > "$TEMP_DIR/expected_output.txt" 2>&1
 
         DIFF=$(diff -u "$TEMP_DIR/student_output.txt" "$TEMP_DIR/expected_output.txt")
@@ -173,8 +282,9 @@ run_part_2_special_tests() {
     echo -e "${CYAN}========================================${NC}\n\n"
 }
 
+# ---------------- Main ---------------- #
 CURRENT_DIR=$(pwd)
-
+PART_1_TESTS=$(jq -c '.part_1[]' "$CONFIG_FILE")
 PART_2_TESTS=$(jq -c '.part_2[]' "$CONFIG_FILE")
 PART_2_SPECIAL_TESTS=$(jq -c '.part_2_special[]' "$CONFIG_FILE")
 
