@@ -138,7 +138,6 @@ Ensure the following files are included in your submission:
   - `Makefile`
 - New file:
   - `memsize_test.c`
-  - `helloworld.c`
 
 ---
 
