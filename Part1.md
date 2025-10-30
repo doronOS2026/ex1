@@ -44,7 +44,6 @@ This section explains how to download, compile, and run the xv6 source code.
 This exercise consists of two parts. **Part 2** is optional and worth **5 bonus points**. Carefully follow the instructions provided in the associated markdown files:
 
 - [Part 1: System Call Implementation](#part-1-system-call-implementation)
-- [Part 2: Bonus - Hello World Program](#part-2-bonus---hello-world-program)
 
 ---
 
