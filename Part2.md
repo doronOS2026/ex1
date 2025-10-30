@@ -43,7 +43,7 @@ This Python script converts chess moves from the PGN format into UCI format. The
 Repository Contents
 -------------------
 
-*   **chess\_games/**: Contains various `.pgn` files.
+*   **splited\_pgn/**: Contains various `.pgn` files.
 *   **parse\_moves.py**: Python script for converting notation.
 *   **chess\_sim.sh**: Your Bash script to run the simulation.
 
