@@ -122,34 +122,6 @@ After starting xv6, execute your program by running the following command:
 ```bash
 memsize_test
 ```
----
-
-## Part 2: Bonus - Hello World Program
-
-### Overview
-In this part, you will create a simple "Hello World" program that runs on xv6.
-
-### Steps to Implement
-1. **Create a New File**
-   Create a new file named `helloworld.c` in the `user` directory of xv6.
-
-2. **Add to Makefile**
-   Modify the `Makefile` in the top-level directory to include `helloworld.c` in the user programs section.
-
-3. **Write the Program**
-   Write a program that prints `Hello World xv6` to the screen.
-
-4. **Compile xv6**
-   Compile the entire xv6 system, including your new program, by running:
-   ```bash
-   make qemu
-   ```
-
-5. **Run the Program**
-   After starting xv6, execute your program by running the following command:
-   ```bash
-   helloworld
-   ```
 
 ---
 
@@ -166,10 +138,6 @@ Ensure the following files are included in your submission:
   - `Makefile`
 - New file:
   - `memsize_test.c`
-
-### Part 2 (Bonus):
-- Modified `Makefile`
-- New file:
   - `helloworld.c`
 
 ---
